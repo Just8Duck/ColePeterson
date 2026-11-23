@@ -3,14 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Name | Portfolio</title>
+
+<title>Cole Peterson | Portfolio</title>
 
 <style>
 :root{
     --primary:#2563eb;
+    --secondary:#3b82f6;
     --dark:#0f172a;
     --light:#f8fafc;
     --accent:#38bdf8;
+    --card:#ffffff;
 }
 
 *{
@@ -27,78 +30,88 @@ html{
 body{
     background:var(--light);
     color:#1e293b;
+    line-height:1.6;
 }
-
-/* Navigation */
 
 nav{
     position:fixed;
-    width:100%;
     top:0;
+    width:100%;
     background:white;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
-    z-index:100;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    z-index:1000;
 }
 
 nav ul{
     display:flex;
     justify-content:center;
+    flex-wrap:wrap;
     list-style:none;
 }
 
 nav li{
-    margin:20px;
+    margin:18px;
 }
 
 nav a{
     text-decoration:none;
     color:var(--dark);
     font-weight:600;
+    transition:.3s;
 }
 
-/* Hero */
+nav a:hover{
+    color:var(--primary);
+}
 
 .hero{
+    min-height:100vh;
     background:linear-gradient(
         135deg,
-        var(--dark),
-        #1e3a8a
+        #0f172a,
+        #1e40af
     );
     color:white;
-    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:40px;
+    padding:20px;
+}
+
+.hero-content{
+    max-width:900px;
 }
 
 .hero h1{
     font-size:4rem;
+    margin-bottom:10px;
 }
 
 .hero h2{
     color:var(--accent);
-    margin:15px 0;
+    margin-bottom:25px;
+    font-weight:500;
 }
 
 .hero p{
-    max-width:700px;
-    margin:auto;
-    line-height:1.6;
+    font-size:1.1rem;
+    margin-bottom:30px;
 }
 
-.hero-btn{
-    margin-top:30px;
+.btn{
     display:inline-block;
-    padding:14px 32px;
-    background:var(--primary);
+    padding:14px 28px;
+    background:var(--secondary);
     color:white;
     text-decoration:none;
     border-radius:8px;
+    transition:.3s;
 }
 
-/* Sections */
+.btn:hover{
+    background:var(--accent);
+}
 
 section{
     padding:100px 10%;
@@ -108,30 +121,31 @@ section{
     text-align:center;
     font-size:2.5rem;
     margin-bottom:50px;
-}
-
-.card-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+    color:var(--dark);
 }
 
 .card{
-    background:white;
-    padding:25px;
+    background:var(--card);
+    padding:30px;
     border-radius:15px;
     box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
-.skill{
-    display:inline-block;
-    margin:8px;
-    padding:10px 16px;
-    background:#dbeafe;
-    border-radius:25px;
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
 }
 
-/* Contact */
+.skill{
+    display:inline-block;
+    background:#dbeafe;
+    color:#1e3a8a;
+    padding:10px 16px;
+    margin:8px;
+    border-radius:25px;
+    font-weight:600;
+}
 
 .contact{
     background:var(--dark);
@@ -141,6 +155,11 @@ section{
 
 .contact a{
     color:var(--accent);
+    text-decoration:none;
+}
+
+.contact p{
+    margin:15px 0;
 }
 
 footer{
@@ -148,6 +167,11 @@ footer{
     color:white;
     text-align:center;
     padding:30px;
+}
+
+.placeholder{
+    color:#64748b;
+    font-style:italic;
 }
 </style>
 </head>
@@ -167,114 +191,214 @@ footer{
 </nav>
 
 <section class="hero">
-<div>
-<h1>Your Name</h1>
-<h2>Student • Developer • Problem Solver</h2>
+<div class="hero-content">
+
+<h1>Cole Peterson</h1>
+
+<h2>
+Computer Science & Data Science Student
+<br>
+Mathematics Minor
+</h2>
 
 <p>
-Welcome to my personal portfolio website. Here you'll find
-information about my education, projects, experience,
-technical skills, and professional goals.
+Based in Eugene, Oregon, I am passionate about software development,
+data analysis, algorithms, and solving complex problems through
+technology. I enjoy building efficient systems, exploring data, and
+applying mathematical thinking to real-world challenges.
 </p>
 
-<a class="hero-btn" href="#projects">View My Work</a>
+<a href="#about" class="btn">Learn More</a>
+
 </div>
 </section>
 
 <section id="about">
+
 <h2 class="section-title">About Me</h2>
 
 <div class="card">
+
 <p>
-Write a short biography here. Discuss who you are,
-your academic background, career goals, and what
-you are passionate about.
+I'm a double major in Computer Science and Data Science with a minor
+in Mathematics. My academic background provides a strong foundation
+in software engineering, algorithm design, statistics, and analytical
+problem-solving.
 </p>
+
+<br>
+
+<p>
+I enjoy building software, working with data, and continuously
+learning new technologies. Whether implementing efficient algorithms,
+developing applications, or analyzing datasets, I enjoy tackling
+challenging technical problems and expanding my skillset.
+</p>
+
+<br>
+
+<p>
+My goal is to combine software engineering and data science to create
+meaningful solutions while continuing to grow as a developer,
+analyst, and lifelong learner.
+</p>
+
 </div>
+
 </section>
 
 <section id="education">
+
 <h2 class="section-title">Education</h2>
 
 <div class="card">
-<h3>University Name</h3>
-<p>Bachelor of Science in Computer Science</p>
-<p>Expected Graduation: 202X</p>
+
+<h3>University of Oregon</h3>
+
+<p><strong>Major:</strong> Computer Science</p>
+<p><strong>Major:</strong> Data Science</p>
+<p><strong>Minor:</strong> Mathematics</p>
+<p><strong>Location:</strong> Eugene, Oregon</p>
+
+<br>
+
+<h4>Relevant Coursework</h4>
+
+<ul>
+<li>Data Structures & Algorithms</li>
+<li>Database Systems</li>
+<li>Software Engineering</li>
+<li>Discrete Mathematics</li>
+<li>Probability & Statistics</li>
+<li>Data Analysis</li>
+</ul>
+
 </div>
+
 </section>
 
 <section id="skills">
+
 <h2 class="section-title">Skills</h2>
 
-<div style="text-align:center;">
+<div class="card" style="text-align:center;">
+
 <span class="skill">Python</span>
 <span class="skill">Java</span>
 <span class="skill">C++</span>
+<span class="skill">SQL</span>
 <span class="skill">HTML</span>
 <span class="skill">CSS</span>
 <span class="skill">JavaScript</span>
-<span class="skill">SQL</span>
 <span class="skill">Git</span>
+<span class="skill">GitHub</span>
+<span class="skill">Algorithms</span>
+<span class="skill">Data Structures</span>
+<span class="skill">Data Science</span>
+<span class="skill">Statistics</span>
+<span class="skill">Problem Solving</span>
+
 </div>
+
 </section>
 
 <section id="projects">
+
 <h2 class="section-title">Projects</h2>
 
-<div class="card-grid">
+<div class="grid">
 
 <div class="card">
-<h3>Project One</h3>
-<p>Description of project.</p>
-</div>
-
-<div class="card">
-<h3>Project Two</h3>
-<p>Description of project.</p>
+<h3>Project Coming Soon</h3>
+<p class="placeholder">
+Add your first project here.
+</p>
 </div>
 
 <div class="card">
-<h3>Project Three</h3>
-<p>Description of project.</p>
+<h3>Project Coming Soon</h3>
+<p class="placeholder">
+Add your second project here.
+</p>
+</div>
+
+<div class="card">
+<h3>Project Coming Soon</h3>
+<p class="placeholder">
+Add your third project here.
+</p>
 </div>
 
 </div>
+
 </section>
 
 <section id="experience">
+
 <h2 class="section-title">Experience</h2>
 
 <div class="card">
-<h3>Position Title</h3>
-<p>Company Name</p>
-<p>
-Brief overview of responsibilities and achievements.
+
+<h3>Professional Experience</h3>
+
+<p class="placeholder">
+Add internships, jobs, research positions, leadership experience,
+or other professional accomplishments here.
 </p>
+
 </div>
+
 </section>
 
 <section id="interests">
-<h2 class="section-title">Interests & Hobbies</h2>
+
+<h2 class="section-title">Interests</h2>
 
 <div class="card">
+
 <p>
-Competitive gaming, software development,
-problem solving, economics, data structures,
-and algorithm design.
+Software Development • Data Science • Machine Learning •
+Algorithms • Mathematics • Technology • Problem Solving •
+Continuous Learning
 </p>
+
 </div>
+
 </section>
 
 <section class="contact" id="contact">
-<h2 class="section-title">Contact Me</h2>
 
-<p>Email: your@email.com</p>
-<p>LinkedIn: linkedin.com/in/yourname</p>
-<p>GitHub: github.com/yourname</p>
+<h2 class="section-title">Contact</h2>
+
+<p>
+📧
+<a href="mailto:colejpeterson15@outlook.com">
+colejpeterson15@outlook.com
+</a>
+</p>
+
+<p>
+💼
+<a href="https://www.linkedin.com/in/cole-peterson15" target="_blank">
+LinkedIn Profile
+</a>
+</p>
+
+<p>
+💻
+<a href="https://github.com/Just8Duck" target="_blank">
+github.com/Just8Duck
+</a>
+</p>
+
+<p>
+📍 Eugene, Oregon
+</p>
+
 </section>
 
 <footer>
-© 2026 Your Name. All Rights Reserved.
+<p>© 2026 Cole Peterson. All Rights Reserved.</p>
 </footer>
 
 </body>
